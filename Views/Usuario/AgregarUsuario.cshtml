@@ -1,0 +1,50 @@
+﻿@model ClsUsuarioModel
+@{
+    ViewData["Title"] = "AgregarUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AgregarUsuario</h1>
+<form asp-action="AgregarUsuario" asp-controller="Usuario" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Cedula</label>
+        <input type="text" asp-for="Cedula_Usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" asp-for="Nombre_Usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Apellido</label>
+        <input type="text" asp-for="Apellido_Usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+        <input type="email" asp-for="Correo_Usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" asp-for="Password_Usuario" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Celular</label>
+        <input type="text" asp-for="Celular_Usuario" class="form-control" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Rol</label>
+        <select asp-for="Rol_Usuario" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option value="Administrador">Administrador</option>
+            <option value="Super Usuario">Super Usuario</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Estado</label>
+        <select asp-for="Estado_Usuario" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Agregar</button>
+</form>
+

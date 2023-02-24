@@ -1,0 +1,36 @@
+﻿@model List<ClsUsuarioModel>
+@{
+    ViewData["Title"] = "Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Usuarios</h1>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Cedula_Usuario</td>
+            <td>@item.Nombre_Usuario</td>
+            <td>@item.Apellido_Usuario</td>
+            <td>
+                <a class="btn btn-warning" asp-area="" asp-controller="Usuario" asp-action="EditarUsuario" asp-route-Id_Usuario="@item.Id_Usuario">Editar</a>
+                <a class="btn btn-danger" asp-area="" asp-controller="Usuario" asp-action="">Eliminar</a>
+            </td>
+            
+
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-success" asp-area="" asp-controller="Usuario" asp-action="AgregarUsuario">Agregar</a>
